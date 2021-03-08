@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>UALY</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ai-sdk.morphcast.com/v1.14/ai-sdk.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@1.8.0"></script>
+</head>
+<body>
+<section class="main-container container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="comp-logo">
+                <img src="/img/logo.png" alt="logo">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 text-center border top-gap-40">
+            <h4 class="heading">Likely Gender</h4> 
+            <img id="gender" class="gender" alt="gender" hidden>
+            <div id="gender-caption"></div>
+            <hr/>
+            <h4 class="heading">Likely Age</h4> <span id="age"></span>
+            <hr/>
+            <h4 class="heading">Affect</h4> 
+            <div id="icon_affect" class="icon-affect"></div><hr/>
+            <h4 class="heading">Emotion</h4> 
+            <div id="icon_emotion" class="icon-emotion"></div>
+            <hr/>
+            <input id="btn_video" class="btn btn-primary" type="reset" value="From File">
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="circle-graph">
+                        <div class="pin_wrap">
+                            <div id="grapg_pin" class="pin pulse"></div>
+                        </div>
+                    </div>
+                    <div id="chart_container" class="wrapper">
+                        <canvas class="charts" id="chart"></canvas>
+                    </div>
+                    <div id="canvas_container" class="text-center bg-black">
+                        <canvas id="canvas" width="600" height="600"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-emotions">
+                <div class="col-md-12 text-center top-20">
+                    <div class="emotion-bar pull-left width-78">
+                        <h4 class="heading">Attention</h4>
+                        <div class="progress progress-bar-vertical">
+                            <div id="attention" class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-bar">
+                        <div class="emotion-type">Angry</div>
+                        <div class="progress progress-bar-vertical">
+                            <div id="Angry" class="progress-bar angry" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-bar">
+                        <div class="emotion-type">Disgust</div>
+                        <div class="progress progress-bar-vertical">
+                            <div id="Disgust" class="progress-bar disgust" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-bar">
+                        <div class="emotion-type">Fear</div>
+                        <div class="progress progress-bar-vertical">
+                            <div id="Fear" class="progress-bar fear" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-bar">
+                        <div class="emotion-type">Happy</div>
+                        <div class="progress progress-bar-vertical">
+                            <div id="Happy" class="progress-bar happy" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-bar">
+                        <div class="emotion-type">Neutral</div>
+                        <div class="progress progress-bar-vertical">
+                            <div id="Neutral" class="progress-bar neutral" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-bar">
+                        <div class="emotion-type">Sad</div>
+                        <div class="progress progress-bar-vertical">
+                            <div id="Sad" class="progress-bar sad" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-bar">
+                        <div class="emotion-type">Surprise</div>
+                        <div class="progress progress-bar-vertical">
+                            <div id="Surprise" class="progress-bar surprise" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-bar pull-right width-110">
+                        <h4 class="heading">Likely Wish</h4>
+                        <div class="progress progress-bar-vertical">
+                            <div id="wish" class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 text-center border top-gap-40">
+            <h4 class="heading">Features</h4>
+            <hr/>
+            <div class="features">
+                <div class="feature-name" id="Arched_Eyebrows">Arched Eyebrows</div>
+                <div class="feature-name" id="Attractive">Attractive</div>
+                <div class="feature-name" id="Bags_Under_Eyes">Bags Under Eyes</div>
+                <div class="feature-name" id="Bald">Bald</div>
+                <div class="feature-name" id="Bangs">Bangs</div>
+                <div class="feature-name" id="Big_Lips">Big Lips</div>
+                <div class="feature-name" id="Big_Nose">Big Nose</div>
+                <div class="feature-name" id="Black_Hair">Black Hair</div>
+                <div class="feature-name" id="Blond_Hair">Blond Hair</div>
+                <div class="feature-name" id="Brown_Hair">Brown Hair</div>
+                <div class="feature-name" id="Chubby">Chubby</div>
+                <div class="feature-name" id="Double_Chin">Double Chin</div>
+                <div class="feature-name" id="Earrings">Earrings</div>
+                <div class="feature-name" id="Eyebrows_Bushy">Eyebrows Bushy</div>
+                <div class="feature-name" id="Eyeglasses">Eyeglasses</div>
+                <div class="feature-name" id="Goatee">Goatee</div>
+                <div class="feature-name" id="Gray_Hair">Gray Hair</div>
+                <div class="feature-name" id="Hat">Hat</div>
+                <div class="feature-name" id="Heavy_Makeup">Heavy Makeup</div>
+                <div class="feature-name" id="High_Cheekbones">High Cheekbones</div>
+                <div class="feature-name" id="Lipstick">Lipstick</div>
+                <div class="feature-name" id="Mouth_Slightly_Open">Mouth Slightly Open</div>
+                <div class="feature-name" id="Mustache">Mustache</div>
+                <div class="feature-name" id="Narrow_Eyes">Narrow Eyes</div>
+                <div class="feature-name" id="Necklace">Necklace</div>
+                <div class="feature-name" id="Necktie">Necktie</div>
+                <div class="feature-name" id="No_Beard">No Beard</div>
+                <div class="feature-name" id="Oval_Face">Oval Face</div>
+                <div class="feature-name" id="Pale_Skin">Pale Skin</div>
+                <div class="feature-name" id="Pointy_Nose">Pointy Nose</div>
+                <div class="feature-name" id="Receding_Hairline">Receding Hairline</div>
+                <div class="feature-name" id="Rosy_Cheeks">Rosy Cheeks</div>
+                <div class="feature-name" id="Sideburns">Sideburns</div>
+                <div class="feature-name" id="Straight_Hair">Straight Hair</div>
+                <div class="feature-name" id="Wavy_Hair">Wavy Hair</div>
+            </div>
+        </div>
+    </div>
+</section> 
+<script src="js/graph.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

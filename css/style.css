@@ -1,0 +1,183 @@
+
+.main-container {
+    font-family: 'Roboto Slab', serif;
+  }
+  .comp-logo img{
+    width: 200px;
+    margin-left: -45px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+.heading{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    letter-spacing: 1.4px
+}
+
+.progress-bar-vertical {
+  width: 10px;
+  min-height: 100px;
+  display: flex;
+  align-items: flex-end;
+  margin: 0 auto;
+}
+
+.progress-bar-vertical .progress-bar {
+  width: 100%;
+  height: 0;
+  -webkit-transition: height 0.6s ease;
+  -o-transition: height 0.6s ease;
+  transition: height 0.6s ease;
+}
+.emotion-bar{
+    display:inline-block;
+    width:52px;
+    margin: 0 auto;
+    text-align: center;
+}
+.emotion-type{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.bg-black{
+    background:#000;
+    height:400px;
+    padding-top:10%;
+}
+.top-20{
+    margin-top:20px
+}
+.gender{
+    width:52px;
+}
+.border-emotions{
+    border-bottom: solid 1px #dee2e6;
+    padding-bottom:20px;
+}
+.border{
+    border: solid 1px;
+}
+.top-gap-40{
+    padding-top:40px;
+}
+.btn-primary {
+    color: #666;
+    background-color: #dee2e6;
+    border-color: #dee2e6;
+}
+.width-78{
+    width:78px;
+}
+.pull-left{
+    float:left;
+}
+.pull-right{
+    float:right;
+}
+.width-110{
+    width: 110px;
+}
+.feature-name{
+    font-size: 12px;
+    display: none;
+}
+.circle-graph{
+    display: none;
+    position: absolute;
+    top:0;
+    left:15px;
+    background-image: url(../img/circle-graph-less.png);
+    height: 100%;
+    width:473px;
+    background-repeat: no-repeat;
+    background-size: 480px 400px;
+}
+.pin{
+    width: 4%;
+    height: 5%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 10px;
+    opacity: 0;
+    position: absolute;
+    bottom: 48%;
+    left: 48%;
+    background-color: rgb(243, 227, 227);
+    color: rgb(243, 227, 227);
+}
+.pin_wrap{
+    position: absolute;
+    left: 61px;
+    bottom: 25px;
+    margin: auto;
+    height: 350px;
+    width: 358px;
+}
+.icon-affect{
+    background-image: url(../img/circle-graph-less.png);
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #101010;
+    border-radius: 6%;
+    cursor: pointer;
+    margin: 0 auto;
+    opacity:0.4
+}
+.icon-emotion{
+    background-image: url(../img/emo-chart.png);
+    width: 70px;
+    height: 46px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #101010;
+    border-radius: 6%;
+    cursor: pointer;
+    margin: 0 auto;
+    opacity:0.4
+}
+.btn{
+    margin-bottom: 10px;
+}
+.angry{
+    background-color:#e60f28;
+}
+.disgust{
+    background-color:#d48e0f;
+}
+.fear{
+    background-color:#8b4f92;
+}
+.happy{
+    background-color:#27d534;
+}
+.sad{
+    background-color:#64b5e6;
+}
+.surprise{
+    background-color:#ffbbc7;
+}
+.neutral{
+    background-color:#3e3e3e;
+}
+.chart-container{
+    position: absolute;
+    width:100%;
+}
+.wrapper{
+    position: absolute;
+    width: 96%;
+    bottom: 4px;
+    display: none;
+    background: linear-gradient(180deg,rgba(14,14,14,0) 0,rgba(14,14,14,.4) 15%,rgba(14,14,14,.7) 50%,rgba(14,14,14,.4) 85%,rgba(14,14,14,0))
+}
+.charts{
+    width:100%;
+}
+hr{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
