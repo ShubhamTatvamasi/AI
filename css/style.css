@@ -10,9 +10,10 @@
   }
 .heading{
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.9rem;
+    font-size: 12px;
     font-weight: bolder;
-    letter-spacing: 1.4px
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
 }
 
 .progress-bar-vertical {
@@ -32,7 +33,7 @@
 }
 .emotion-bar{
     display:inline-block;
-    width:52px;
+    width:58px;
     margin: 0 auto;
     text-align: center;
 }
@@ -42,7 +43,7 @@
 }
 .bg-black{
     background:#000;
-    height:400px;
+    height:414px;
     padding-top:10%;
 }
 .top-20{
@@ -66,8 +67,8 @@
     background-color: #dee2e6;
     border-color: #dee2e6;
 }
-.width-78{
-    width:78px;
+.width-94{
+    width:94px;
 }
 .pull-left{
     float:left;
@@ -86,7 +87,7 @@
     display: none;
     position: absolute;
     top:0;
-    left:15px;
+    left:18%;
     background-image: url(../img/circle-graph-less.png);
     height: 100%;
     width:473px;
@@ -180,4 +181,49 @@ hr{
     margin-bottom: 8px;
     border: 0;
     border-top: 1px solid rgba(0,0,0,.1);
+}
+.card{
+    display: block;
+    margin-bottom: 10px;
+    border: solid 1px #023e8c;
+    -webkit-border-bottom-right-radius: 7px;
+    -webkit-border-bottom-left-radius: 7px;
+    -moz-border-radius-bottomright: 7px;
+    -moz-border-radius-bottomleft: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+.card-title{
+    background: #023e8c;
+    color: #fff;
+    padding: 10px;
+    margin:0;
+}
+.card-body{
+    padding: 6px;
+    color: #f25c04;
+    font-weight: 800;
+}
+.gender-height{
+    height: 100px;
+}
+.age-height{
+    height:40px;
+}
+.feature-height{
+    height:560px;
+}
+.attention-card{
+    width: 102px;
+    height: 164px;
+}
+.table-display{
+    display: table-cell;
+    padding: 14px;
+}
+.padding-10{
+    padding:10px;
+}
+.padding-from-file-btn{
+    padding: 36px 10px;
 }
