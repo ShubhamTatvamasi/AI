@@ -107,6 +107,8 @@ window.addEventListener(CY.modules().FACE_AROUSAL_VALENCE.eventName, (evt) => {
   grapg_pin.style.opacity = 0.6
   graph_pin.style.left = left + "%"
   graph_pin.style.bottom = bottom + "%"
+  document.getElementById('Arousal').value = bottom
+  document.getElementById('Valence').value = left
 });
 window.addEventListener(CY.modules().FACE_FEATURES.eventName, (evt) => {
   getFeatures('Arched Eyebrows', evt.detail.output.features["Arched Eyebrows"])

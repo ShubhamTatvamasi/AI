@@ -69,7 +69,6 @@ document.getElementById('btn_video').addEventListener('change', function(){
     .then(({ start, stop }) => start());
     window.addEventListener(CY.modules().FACE_AGE.eventName, (evt) => {
       document.getElementById("age").innerHTML=evt.detail.output.numericAge;
-      console.clear()
     });
 
     window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
@@ -87,6 +86,7 @@ document.getElementById('btn_video').addEventListener('change', function(){
     });
 
     window.addEventListener(CY.modules().FACE_GENDER.eventName, (evt) => {
+      console.clear()
       document.getElementById('gender-caption').innerHTML = evt.detail.output.mostConfident
       if(evt.detail.output.mostConfident && evt.detail.output.mostConfident.toLowerCase() == "male"){
         document.getElementById('gender').src="/img/male-icon.jpg"
@@ -117,6 +117,8 @@ document.getElementById('btn_video').addEventListener('change', function(){
       grapg_pin.style.opacity = 0.6
       graph_pin.style.left = left + "%"
       graph_pin.style.bottom = bottom + "%"
+      document.getElementById('Arousal').value = bottom
+      document.getElementById('Valence').value = left
     });
 
     window.addEventListener(CY.modules().FACE_FEATURES.eventName, (evt) => {
