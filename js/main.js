@@ -61,7 +61,9 @@ document.getElementById('btn_video').addEventListener('click', function(){
 
 window.addEventListener(CY.modules().FACE_AGE.eventName, (evt) => {
   console.clear()
-  document.getElementById("age").innerHTML=evt.detail.output.numericAge;
+  if(evt.detail.output.numericAge > 22){
+    document.getElementById("age").innerHTML=evt.detail.output.numericAge;
+  }
 });
 
 window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
